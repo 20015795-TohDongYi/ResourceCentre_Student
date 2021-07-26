@@ -134,7 +134,16 @@ public class ResourceCentreTest {
 	public void testDoReturnCamcorder() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		camcorderList.add(cc1);
+		assertEquals("Test if that Camcorder arraylist size is 1?", 1, camcorderList.size());
+		assertTrue(cc1.getIsAvailable());
 		
+		ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
+		camcorderList.add(cc2);
+		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
+		assertTrue(cc2.getIsAvailable());
 	}
 	@Test
 	public void testDoReturnChromebook() {
