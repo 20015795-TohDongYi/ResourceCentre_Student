@@ -149,6 +149,16 @@ public class ResourceCentreTest {
 	public void testDoReturnChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		chromebookList.add(cb1);
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		assertTrue(cb1.getIsAvailable());
+		
+		ResourceCentre.doReturnChromebook(chromebookList, cb2.getAssetTag());
+		chromebookList.add(cb2);
+		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+		assertTrue(cb2.getIsAvailable());
 	}
 	
 	@After
