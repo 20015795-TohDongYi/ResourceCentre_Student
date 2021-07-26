@@ -82,6 +82,7 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	
+		//test if the expected output string same as the list of Camcorder retrieved from the SourceCentre
 		allCamcorder= ResourceCentre.retrieveAllCamcorder(camcorderList);
 
 		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
